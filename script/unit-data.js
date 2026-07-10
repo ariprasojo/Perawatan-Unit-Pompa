@@ -15,7 +15,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-pademangan-barat.jpeg",
+    foto: "assets/unit-pompa/unit-pademangan-barat-wide.jpeg",
     deskripsi: "Unit pompa yang bersiaga di Pos Pademangan Barat, menjadi unit garis depan untuk wilayah kerja Pademangan Barat dan sekitarnya."
   },
   {
@@ -27,7 +27,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-pademangan-barat-2.jpeg",
+    foto: "assets/unit-pompa/unit-pademangan-barat-2-wide.jpeg",
     deskripsi: "Unit pendamping di Pos Pademangan Barat, berfungsi sebagai unit cadangan sekaligus unit kedua saat terjadi penanganan kebakaran berskala besar."
   },
   {
@@ -39,7 +39,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-pademangan-timur.jpeg",
+    foto: "assets/unit-pompa/unit-pademangan-timur-wide.jpeg",
     deskripsi: "Ditempatkan di wilayah Pademangan Timur, mendukung respons cepat terhadap potensi kebakaran di area permukiman dan pergudangan."
   },
   {
@@ -51,7 +51,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-pos-binaria.jpeg",
+    foto: "assets/unit-pompa/unit-pos-binaria-wide.jpeg",
     deskripsi: "Unit pompa utama yang bersiaga di Pos Binaria untuk mendukung penanganan kebakaran di wilayah kerja terkait."
   },
   {
@@ -63,7 +63,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-pos-binaria-2.jpeg",
+    foto: "assets/unit-pompa/unit-pos-binaria-2-wide.jpeg",
     deskripsi: "Unit Light Pressure Unit (LPU) 'Asahimas' di Pos Binaria, dirancang untuk respons cepat dengan mobilitas yang lebih ringkas."
   },
   {
@@ -75,7 +75,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-asahimas.jpeg",
+    foto: "assets/unit-pompa/unit-asahimas-wide.jpeg",
     deskripsi: "Unit dengan kapasitas debit terbesar di Sektor Pademangan, disiagakan di kawasan Asahimas untuk mendukung penanganan kebakaran skala besar."
   },
   {
@@ -87,7 +87,7 @@ const unitData = [
     tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "assets/unit-pompa/unit-asahimas-2.jpeg",
+    foto: "assets/unit-pompa/unit-asahimas-2-wide.jpeg",
     deskripsi: "Unit pendamping di kawasan Asahimas, siap dimobilisasi untuk mendukung unit utama dalam penanganan kebakaran."
   }
 ];
