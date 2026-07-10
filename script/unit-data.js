@@ -2,94 +2,93 @@
  * unit-data.js — Data 7 Unit Pompa Sektor Pademangan
  * ─────────────────────────────────────────────────────────
  * Cara edit: ubah nilai di dalam array unitData sesuai data
- * unit sebenarnya (nomor lambung, kapasitas, penempatan, dll).
- * Ganti foto: isi field `foto` dengan path gambar, contoh:
- * foto: "../assets/unit-01.jpg"  (kosongkan "" untuk pakai ikon).
+ * unit sebenarnya. Foto sudah memakai foto asli di folder
+ * assets/unit-pompa/.
  */
 const unitData = [
   {
     id: 1,
-    kode: "UP-01",
-    nama: "Unit Pompa 01",
-    penempatan: "Pos Sektor Pademangan Induk",
-    kapasitas: "2.000 L/menit",
-    tahun: "2019",
+    kode: "B 9522 PHA",
+    nama: "Unit Pompa Pademangan Barat I",
+    penempatan: "Pos Pademangan Barat",
+    kapasitas: "4.000 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Unit pompa utama yang bersiaga di pos induk Sektor Pademangan, digunakan sebagai unit garis depan untuk penanganan kebakaran di wilayah kerja."
+    foto: "assets/unit-pompa/unit-pademangan-barat.jpeg",
+    deskripsi: "Unit pompa yang bersiaga di Pos Pademangan Barat, menjadi unit garis depan untuk wilayah kerja Pademangan Barat dan sekitarnya."
   },
   {
     id: 2,
-    kode: "UP-02",
-    nama: "Unit Pompa 02",
-    penempatan: "Pos Sektor Pademangan Induk",
-    kapasitas: "2.000 L/menit",
-    tahun: "2020",
+    kode: "B 9316 PHA",
+    nama: "Unit Pompa Pademangan Barat II",
+    penempatan: "Pos Pademangan Barat",
+    kapasitas: "2.500 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Unit pendamping di pos induk, berfungsi sebagai unit cadangan sekaligus unit kedua saat terjadi penanganan kebakaran berskala besar."
+    foto: "assets/unit-pompa/unit-pademangan-barat-2.jpeg",
+    deskripsi: "Unit pendamping di Pos Pademangan Barat, berfungsi sebagai unit cadangan sekaligus unit kedua saat terjadi penanganan kebakaran berskala besar."
   },
   {
     id: 3,
-    kode: "UP-03",
-    nama: "Unit Pompa 03",
-    penempatan: "Pos Pademangan Barat",
-    kapasitas: "1.800 L/menit",
-    tahun: "2018",
+    kode: "B 9640 PHA",
+    nama: "Unit Pompa Pademangan Timur",
+    penempatan: "Pos Pademangan Timur",
+    kapasitas: "2.500 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Bersiaga di wilayah Pademangan Barat untuk mempercepat respons penanganan kebakaran di area permukiman padat."
+    foto: "assets/unit-pompa/unit-pademangan-timur.jpeg",
+    deskripsi: "Ditempatkan di wilayah Pademangan Timur, mendukung respons cepat terhadap potensi kebakaran di area permukiman dan pergudangan."
   },
   {
     id: 4,
-    kode: "UP-04",
-    nama: "Unit Pompa 04",
-    penempatan: "Pos Pademangan Timur",
-    kapasitas: "1.800 L/menit",
-    tahun: "2021",
+    kode: "B 9305 PHA",
+    nama: "Unit Pompa Pos Binaria I",
+    penempatan: "Pos Binaria",
+    kapasitas: "4.000 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Ditempatkan di wilayah Pademangan Timur, mendukung respons cepat terhadap potensi kebakaran di kawasan industri dan pergudangan."
+    foto: "assets/unit-pompa/unit-pos-binaria.jpeg",
+    deskripsi: "Unit pompa utama yang bersiaga di Pos Binaria untuk mendukung penanganan kebakaran di wilayah kerja terkait."
   },
   {
     id: 5,
-    kode: "UP-05",
-    nama: "Unit Pompa 05",
-    penempatan: "Pos Ancol",
-    kapasitas: "2.200 L/menit",
-    tahun: "2017",
+    kode: "B 9233 PHA",
+    nama: "Unit Pompa Pos Binaria II (Light Pressure Unit)",
+    penempatan: "Pos Binaria",
+    kapasitas: "2.500 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Unit dengan kapasitas debit tertinggi, disiagakan di kawasan Ancol untuk mendukung penanganan area wisata dan padat pengunjung."
+    foto: "assets/unit-pompa/unit-pos-binaria-2.jpeg",
+    deskripsi: "Unit Light Pressure Unit (LPU) 'Asahimas' di Pos Binaria, dirancang untuk respons cepat dengan mobilitas yang lebih ringkas."
   },
   {
     id: 6,
-    kode: "UP-06",
-    nama: "Unit Pompa 06",
-    penempatan: "Pos Pademangan Induk",
-    kapasitas: "1.500 L/menit",
-    tahun: "2016",
+    kode: "—",
+    nama: "Unit Pompa Asahimas I",
+    penempatan: "Asahimas",
+    kapasitas: "10.000 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
-    kondisi: "Perlu Perhatian",
-    foto: "",
-    deskripsi: "Unit dalam pemantauan rutin. Sedang dijadwalkan pemeriksaan berkala terhadap komponen mesin dan sistem pompa."
+    kondisi: "Baik",
+    foto: "assets/unit-pompa/unit-asahimas.jpeg",
+    deskripsi: "Unit dengan kapasitas debit terbesar di Sektor Pademangan, disiagakan di kawasan Asahimas untuk mendukung penanganan kebakaran skala besar."
   },
   {
     id: 7,
-    kode: "UP-07",
-    nama: "Unit Pompa 07",
-    penempatan: "Pos Cadangan Sektor",
-    kapasitas: "1.500 L/menit",
-    tahun: "2022",
+    kode: "B 9408 PHA",
+    nama: "Unit Pompa Asahimas II",
+    penempatan: "Asahimas",
+    kapasitas: "2.500 L/menit",
+    tahun: "—",
     bahanBakar: "Solar (Diesel)",
     kondisi: "Baik",
-    foto: "",
-    deskripsi: "Unit cadangan sektor yang siap dimobilisasi ke pos mana pun sesuai kebutuhan operasional dan penugasan piket."
+    foto: "assets/unit-pompa/unit-asahimas-2.jpeg",
+    deskripsi: "Unit pendamping di kawasan Asahimas, siap dimobilisasi untuk mendukung unit utama dalam penanganan kebakaran."
   }
 ];
 
@@ -106,11 +105,10 @@ function renderUnitGrid() {
         ${u.foto ? `<img src="${u.foto}" alt="${u.nama}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>` : "🚒"}
       </div>
       <div class="unit-card__body">
-        <p class="unit-card__title">${u.nama} <span style="color:var(--ink-soft);font-weight:600;font-size:0.8rem;">· ${u.kode}</span></p>
-        <p class="unit-card__loc">📍 ${u.penempatan}</p>
+        <p class="unit-card__title">${u.nama}</p>
+        <p class="unit-card__loc">📍 ${u.penempatan}${u.kode !== "—" ? " · " + u.kode : ""}</p>
         <div class="unit-card__meta">
           <span>⚡ ${u.kapasitas}</span>
-          <span>📅 ${u.tahun}</span>
         </div>
         <p class="unit-card__cta">Lihat Detail →</p>
       </div>`;
@@ -123,7 +121,7 @@ function openUnitModal(u) {
   const overlay = document.getElementById("unitModalOverlay");
   if (!overlay) return;
   document.getElementById("unitModalTitle").textContent = u.nama;
-  document.getElementById("unitModalSub").textContent = `${u.kode} · ${u.penempatan}`;
+  document.getElementById("unitModalSub").textContent = `${u.kode !== "—" ? u.kode + " · " : ""}${u.penempatan}`;
   document.getElementById("unitModalDesc").textContent = u.deskripsi;
   document.getElementById("unitModalKapasitas").textContent = u.kapasitas;
   document.getElementById("unitModalTahun").textContent = u.tahun;
@@ -131,6 +129,18 @@ function openUnitModal(u) {
   const kondisiEl = document.getElementById("unitModalKondisi");
   kondisiEl.textContent = u.kondisi;
   kondisiEl.style.color = u.kondisi === "Baik" ? "var(--ok)" : "var(--dev)";
+
+  const heroEl = document.querySelector(".modal-box__hero");
+  if (u.foto) {
+    heroEl.style.backgroundImage = `url('${u.foto}')`;
+    heroEl.style.backgroundSize = "cover";
+    heroEl.style.backgroundPosition = "center";
+    heroEl.style.fontSize = "0";
+  } else {
+    heroEl.style.backgroundImage = "none";
+    heroEl.style.fontSize = "4rem";
+  }
+
   overlay.classList.add("is-open");
   document.body.style.overflow = "hidden";
 }
