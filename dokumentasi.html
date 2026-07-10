@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dokumentasi Temuan — Link Terpadu Sektor Pademangan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar__brand">
+    <div class="topbar__logo">🔥</div>
+    <div>
+      <p class="topbar__org">Dinas Penanggulangan Kebakaran &amp; Penyelamatan</p>
+      <p class="topbar__sector">Sektor Pademangan</p>
+    </div>
+  </a>
+  <button class="topbar__burger" id="burgerBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="topbar__nav" id="topNav">
+    <a href="index.html" class="nav__link"><span>🏠</span>Beranda</a>
+    <a href="profil-unit.html" class="nav__link"><span>🚒</span>Profil Unit</a>
+    <a href="pemeliharaan.html" class="nav__link"><span>🔧</span>Pemeliharaan</a>
+    <a href="edukasi.html" class="nav__link"><span>🎥</span>Video Edukasi</a>
+    <a href="dokumentasi.html" class="nav__link nav__link--active"><span>📸</span>Dokumentasi</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html" class="breadcrumb__link">🏠 Beranda</a>
+      <span class="breadcrumb__sep">›</span>
+      <span class="breadcrumb__current">Dokumentasi Temuan</span>
+    </nav>
+    <div class="page-hero__content">
+      <div class="page-hero__icon">📸</div>
+      <div>
+        <h1 class="page-hero__title">Dokumentasi Temuan</h1>
+        <p class="page-hero__sub">Pelaporan temuan kendala atau kerusakan perlengkapan unit pompa melalui Google Form, dengan rekap dan arsip digital pada Google Sheets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hose-divider"></div>
+
+<main class="section">
+  <div class="container">
+    <div class="doc-grid">
+      <div class="doc-card" style="--accent:#c1121f">
+        <div class="doc-card__icon">📝</div>
+        <p class="doc-card__title">Formulir Pelaporan Temuan</p>
+        <p class="doc-card__desc">Laporkan temuan kendala atau kerusakan pada perlengkapan unit pompa (selang, nozzle, coupling, hose reel, dll) melalui formulir digital ini.</p>
+        <a href="https://forms.google.com/" target="_blank" rel="noopener" class="doc-card__btn">Buka Google Form ↗</a>
+      </div>
+      <div class="doc-card" style="--accent:#2f7d4f">
+        <div class="doc-card__icon">📊</div>
+        <p class="doc-card__title">Rekap &amp; Arsip Digital</p>
+        <p class="doc-card__desc">Seluruh temuan yang dilaporkan terekam otomatis dan dapat dipantau oleh personel maupun pimpinan pada rekap Google Sheets berikut.</p>
+        <a href="https://sheets.google.com/" target="_blank" rel="noopener" class="doc-card__btn">Buka Google Sheets ↗</a>
+      </div>
+    </div>
+
+    <div class="doc-note">
+      ⚠️ <b>Informasi Penting:</b> Dokumentasi pada menu ini hanya berisi foto/laporan ketika terjadi kendala atau kerusakan pada peralatan. Kondisi peralatan yang normal tidak perlu didokumentasikan.
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <p class="footer__title">🔥 Link Terpadu</p>
+      <p class="footer__text">Sektor Penanggulangan Kebakaran dan Penyelamatan Kecamatan Pademangan. Media informasi digital perawatan unit pompa — cepat, mudah, dan terintegrasi.</p>
+    </div>
+    <div>
+      <p class="footer__title">Pengembang</p>
+      <p class="footer__dev">
+        <b>Ari Prasojo</b><br>
+        Petugas Pemadam Kebakaran Pemula<br>
+        Sektor Penanggulangan Kebakaran dan Penyelamatan Kecamatan Pademangan
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span class="js-year"></span> Link Terpadu — Sektor Pademangan</span>
+    <span>Dikembangkan oleh Ari Prasojo</span>
+  </div>
+</footer>
+
+<script src="script/main.js"></script>
+</body>
+</html>
