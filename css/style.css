@@ -439,6 +439,7 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.2s ease;
 }
 .modal-overlay.is-open { opacity: 1; pointer-events: auto; }
+.modal-overlay:focus { outline: none; }
 .modal-box {
   background: var(--card); border-radius: var(--radius-l);
   max-width: 560px; width: 100%; max-height: 88vh; overflow-y: auto;
@@ -446,7 +447,7 @@ img { max-width: 100%; display: block; }
 }
 .modal-overlay.is-open .modal-box { transform: translateY(0); }
 .modal-box__hero {
-  aspect-ratio: 3 / 4; max-height: 70vh; background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  width: 100%; aspect-ratio: 3 / 4; max-height: 70vh; background: linear-gradient(135deg, var(--navy), var(--navy-light));
   display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #fff;
   position: relative;
 }
@@ -457,7 +458,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 2px 10px rgba(0,0,0,0.35);
   font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.modal-box__hero { background-size: cover !important; background-position: center !important; }
+.modal-box__hero { background-size: contain !important; background-position: center !important; background-repeat: no-repeat !important; }
 .modal-box__hero::before {
   content: "";
   position: absolute; inset: 0; pointer-events: none;
@@ -584,4 +585,123 @@ img { max-width: 100%; display: block; }
   .footer__bottom { flex-direction: column; }
   .fleet-strip__grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .stat-strip__row { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+/* ==========================================================================
+   INFOGRAFIS PEMELIHARAAN — komponen konten kaya (foto + narasi teknis)
+   Dipakai di pemeliharaan.html, bersumber dari materi Buku Diklat Operator.
+   ========================================================================== */
+
+/* Intro: foto sampul + ringkasan panduan, sisi-bersisi */
+.maint-intro { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 34px; align-items: center; margin-top: 34px; }
+.maint-intro__photo { aspect-ratio: 3/4; border-radius: var(--radius-l); overflow: hidden; box-shadow: var(--shadow-m); }
+.maint-intro__photo img { width: 100%; height: 100%; object-fit: cover; }
+.maint-intro__eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; }
+.maint-intro__title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--navy); margin-bottom: 12px; }
+.maint-intro__text { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.7; }
+
+/* Blok narasi + foto (dipakai utk "mengapa penting"), foto di kanan */
+.maint-feature { display: grid; grid-template-columns: 1fr 0.9fr; gap: 34px; align-items: center; margin-top: 44px; }
+.maint-feature__photo { aspect-ratio: 4/5; border-radius: var(--radius-l); overflow: hidden; box-shadow: var(--shadow-m); order: 2; }
+.maint-feature__photo img { width: 100%; height: 100%; object-fit: cover; }
+.maint-feature__body { order: 1; }
+
+/* Alur 4 langkah terhubung (icon flow) */
+.flow-steps { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; margin-top: 26px; flex-wrap: wrap; }
+.flow-steps__item { display: flex; flex-direction: column; align-items: center; text-align: center; width: 110px; gap: 10px; }
+.flow-steps__circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  background: var(--card); border: 2px solid var(--brass); box-shadow: var(--shadow-s);
+  flex-shrink: 0;
+}
+.flow-steps__label { font-size: 0.78rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.flow-steps__arrow { color: var(--brass); font-size: 1.3rem; align-self: center; margin-top: 22px; opacity: 0.7; }
+
+/* Perbandingan 2 jenis selang */
+.hose-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
+.hose-type-card { background: var(--card); border-radius: var(--radius-l); overflow: hidden; box-shadow: var(--shadow-s); }
+.hose-type-card__photo { aspect-ratio: 8/5; }
+.hose-type-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+.hose-type-card__body { padding: 18px 20px 22px; }
+.hose-type-card__title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
+.hose-type-card ul { list-style: none; display: grid; gap: 8px; }
+.hose-type-card li { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.4; padding-left: 20px; position: relative; }
+.hose-type-card li::before { content: "•"; position: absolute; left: 2px; top: 0; color: var(--brass); font-weight: 800; }
+
+/* Checklist pemeriksaan (grid kartu ikon) */
+.checklist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+.checklist-card { background: var(--card); border-top: 3px solid var(--brass); border-radius: var(--radius-m); padding: 20px; box-shadow: var(--shadow-s); }
+.checklist-card__icon { width: 42px; height: 42px; border-radius: 50%; background: var(--paper-warm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 12px; }
+.checklist-card__title { font-weight: 700; color: var(--navy); font-size: 0.98rem; margin-bottom: 6px; }
+.checklist-card__desc { font-size: 0.83rem; color: var(--ink-soft); line-height: 1.5; }
+
+/* Tahap pemeliharaan pasca-operasi (zig-zag foto + narasi) */
+.stage-block { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 36px; align-items: center; margin-top: 46px; }
+.stage-block--reverse .stage-block__photo { order: 2; }
+.stage-block--reverse .stage-block__body { order: 1; }
+.stage-block__photo { aspect-ratio: 3/4; border-radius: var(--radius-l); overflow: hidden; box-shadow: var(--shadow-m); }
+.stage-block__photo img { width: 100%; height: 100%; object-fit: cover; }
+.stage-block__tag {
+  display: inline-block; background: var(--red); color: #fff; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.05em; padding: 5px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase;
+}
+.stage-block__title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--navy); margin-bottom: 10px; }
+.stage-block__desc { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 20px; }
+.stage-block__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: start; }
+.stage-block__goals { list-style: none; display: grid; gap: 12px; }
+.stage-block__goals li { border-left: 3px solid var(--brass); padding-left: 14px; }
+.stage-block__goals b { display: block; color: var(--navy); font-size: 0.88rem; margin-bottom: 2px; }
+.stage-block__goals span { font-size: 0.83rem; color: var(--ink-soft); line-height: 1.45; }
+.tips-box { background: var(--navy); color: #fff; border-radius: var(--radius-m); padding: 16px 18px; border-left: 4px solid var(--brass-light); }
+.tips-box__title { font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; color: var(--brass-light); text-transform: uppercase; letter-spacing: 0.03em; }
+.tips-box__text { font-size: 0.83rem; line-height: 1.55; opacity: 0.92; }
+
+/* Peringatan & indikator kerusakan */
+.warn-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 26px; }
+.warn-box { border-radius: var(--radius-m); padding: 20px 22px; color: #fff; }
+.warn-box--caution { background: var(--navy); }
+.warn-box--danger { background: var(--red-dark); }
+.warn-box__title { font-weight: 700; font-size: 1rem; margin-bottom: 14px; }
+.warn-box ul { list-style: none; display: grid; gap: 9px; }
+.warn-box li { font-size: 0.85rem; line-height: 1.4; padding-left: 18px; position: relative; opacity: 0.94; }
+.warn-box li::before { content: "•"; position: absolute; left: 2px; top: 0; color: var(--brass-light); font-weight: 800; }
+
+/* Ringkasan manfaat + referensi */
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 26px; }
+.summary-item__icon { font-size: 1.6rem; margin-bottom: 10px; }
+.summary-item__title { font-weight: 700; color: var(--navy); font-size: 0.92rem; margin-bottom: 4px; }
+.summary-item__desc { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.45; }
+.reference-list { list-style: none; display: grid; gap: 8px; margin-top: 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+.reference-list li { font-size: 0.86rem; color: var(--ink-soft); padding-left: 20px; position: relative; }
+.reference-list li::before { content: "📘"; position: absolute; left: 0; top: 0; font-size: 0.8rem; }
+
+@media (max-width: 900px) {
+  .maint-intro, .maint-feature, .stage-block { grid-template-columns: 1fr; }
+  .maint-feature__photo, .stage-block__photo { order: 1; }
+  .maint-feature__body, .stage-block__body { order: 2; }
+  .stage-block__grid { grid-template-columns: 1fr; }
+  .hose-type-grid, .warn-columns { grid-template-columns: 1fr; }
+  .checklist-grid { grid-template-columns: repeat(2, 1fr); }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .flow-steps__arrow { display: none; }
+}
+
+/* ==========================================================================
+   AKSESIBILITAS — focus-visible untuk elemen yang kini bisa dinavigasi keyboard
+   (unit-card & video-card sebelumnya hanya bisa diklik mouse)
+   ========================================================================== */
+.unit-card:focus-visible,
+.video-card:focus-visible,
+.care-item--ready:focus-visible,
+.fleet-strip__item--more:focus-visible {
+  outline: 3px solid var(--brass-light);
+  outline-offset: 3px;
+}
+.nav__link:focus-visible,
+.menu-card:focus-visible,
+.doc-card__btn:focus-visible,
+.hero__cta:focus-visible {
+  outline: 3px solid var(--brass-light);
+  outline-offset: 2px;
 }

@@ -54,11 +54,11 @@
 </main>
 
 <!-- Modal Detail Unit -->
-<div class="modal-overlay" id="unitModalOverlay">
+<div class="modal-overlay" id="unitModalOverlay" role="dialog" aria-modal="true" aria-labelledby="unitModalTitle" aria-hidden="true" tabindex="-1">
   <div class="modal-box">
     <div class="modal-box__hero">
       🚒
-      <button class="modal-box__close" id="unitModalClose">✕</button>
+      <button class="modal-box__close" id="unitModalClose" aria-label="Tutup detail unit">✕</button>
     </div>
     <div class="modal-box__body">
       <p class="modal-box__title" id="unitModalTitle">—</p>
@@ -108,6 +108,8 @@
 </footer>
 
 <script src="script/main.js"></script>
+<script src="script/utils.js"></script>
+<script src="script/modal.js"></script>
 <script src="script/unit-data.js"></script>
 </body>
 </html>

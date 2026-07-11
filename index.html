@@ -47,19 +47,10 @@
 
   <div class="fleet-strip container">
     <p class="fleet-strip__label">Armada Unit Pompa — Sektor Pademangan</p>
-    <div class="fleet-strip__grid">
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-pademangan-barat-tall.jpeg" alt="Unit Pademangan Barat I"/><span>Pademangan Barat</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-pademangan-barat-2-tall.jpeg" alt="Unit Pademangan Barat II"/><span>Pademangan Barat</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-pademangan-timur-tall.jpeg" alt="Unit Pademangan Timur"/><span>Pademangan Timur</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-pos-binaria-tall.jpeg" alt="Unit Pos Binaria I"/><span>Pos Binaria</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-pos-binaria-2-tall.jpeg" alt="Unit Pos Binaria II"/><span>Pos Binaria</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-asahimas-tall.jpeg" alt="Unit Asahimas I"/><span>Asahimas</span></div>
-      <div class="fleet-strip__item"><img src="assets/unit-pompa/unit-asahimas-2-tall.jpeg" alt="Unit Asahimas II"/><span>Asahimas</span></div>
-      <a href="profil-unit.html" class="fleet-strip__item fleet-strip__item--more">
-        <span class="fleet-strip__more-num">7</span>
-        <span class="fleet-strip__more-txt">Lihat Semua Unit →</span>
-      </a>
-    </div>
+    <!-- Diisi otomatis oleh renderFleetStrip() di script/unit-data.js,
+         memakai sumber data yang sama dengan halaman Profil Unit,
+         supaya foto/nama unit tidak perlu diedit di dua tempat. -->
+    <div class="fleet-strip__grid" id="fleetStripGrid"></div>
   </div>
 </section>
 
@@ -179,5 +170,7 @@
 </footer>
 
 <script src="script/main.js"></script>
+<script src="script/utils.js"></script>
+<script src="script/unit-data.js"></script>
 </body>
 </html>
