@@ -406,7 +406,7 @@ img { max-width: 100%; display: block; }
 }
 .unit-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-l); }
 .unit-card__photo {
-  aspect-ratio: 1.8 / 1; display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center;
   font-size: 3.2rem; position: relative;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: rgba(255,255,255,0.9);
@@ -415,7 +415,7 @@ img { max-width: 100%; display: block; }
 .unit-card__photo::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(11,29,58,0) 60%, rgba(11,29,58,0.5) 100%);
+  background: linear-gradient(180deg, rgba(11,29,58,0) 65%, rgba(11,29,58,0.5) 100%);
   pointer-events: none;
 }
 .unit-card__no {
@@ -446,7 +446,7 @@ img { max-width: 100%; display: block; }
 }
 .modal-overlay.is-open .modal-box { transform: translateY(0); }
 .modal-box__hero {
-  aspect-ratio: 1.8 / 1; background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  aspect-ratio: 3 / 4; max-height: 70vh; background: linear-gradient(135deg, var(--navy), var(--navy-light));
   display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #fff;
   position: relative;
 }
