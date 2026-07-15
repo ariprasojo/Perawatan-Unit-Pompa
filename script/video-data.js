@@ -2,15 +2,15 @@
  * video-data.js — Data Video Edukasi (Channel Edu Damkar)
  * ─────────────────────────────────────────────────────────
  * Cara tambah video: tambahkan objek baru ke array videoData.
- * youtubeId diambil dari URL: youtube.com/watch?v=XXXXXXXXXXX
+ * youtubeId bisa diisi dengan ID polos (contoh: "vY3DpEboi68")
+ * ATAU URL lengkap YouTube (contoh: "https://www.youtube.com/watch?v=vY3DpEboi68").
+ * Keduanya akan otomatis dinormalisasi oleh extractYoutubeId().
  *
  * Membutuhkan: utils.js dan modal.js sudah di-load sebelum file ini.
  */
 window.LinkTerpadu = window.LinkTerpadu || {};
-
 (function (App) {
   "use strict";
-
   const escapeHtml = App.escapeHtml;
   const PLACEHOLDER_ID = "dQw4w9WgXcQ";
 
@@ -22,6 +22,40 @@ window.LinkTerpadu = window.LinkTerpadu || {};
     { id: 5, youtubeId: "dQw4w9WgXcQ", title: "Mengenal Bagian-Bagian Unit Mobil Pompa", desc: "Pengenalan komponen utama unit mobil pompa untuk personel baru." },
     { id: 6, youtubeId: "dQw4w9WgXcQ", title: "Prosedur Pelaporan Temuan Kerusakan Perlengkapan", desc: "Cara melaporkan temuan kendala atau kerusakan melalui Link Terpadu." },
   ];
+
+  /**
+   * Mengekstrak ID video YouTube (11 karakter) dari berbagai bentuk input:
+   * - ID polos: "vY3DpEboi68"
+   * - watch URL: "https://www.youtube.com/watch?v=vY3DpEboi68"
+   * - short URL: "https://youtu.be/vY3DpEboi68"
+   * - embed URL: "https://www.youtube.com/embed/vY3DpEboi68"
+   * Kalau tidak cocok pola manapun, input dikembalikan apa adanya
+   * (supaya warning placeholder di bawah tetap bisa mendeteksi kejanggalan).
+   */
+  function extractYoutubeId(input) {
+    if (!input) return input;
+    const trimmed = String(input).trim();
+
+    // Sudah berupa ID polos (11 karakter valid, tanpa slash/titik/spasi)
+    if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
+
+    const patterns = [
+      /(?:v=|\/embed\/|\/v\/|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    ];
+    for (const re of patterns) {
+      const m = trimmed.match(re);
+      if (m) return m[1];
+    }
+
+    console.warn(`[Link Terpadu] Gagal mengekstrak ID YouTube dari: "${trimmed}". Menggunakan nilai asli sebagai fallback.`);
+    return trimmed;
+  }
+
+  // Normalisasi seluruh data sekali di awal, supaya field youtubeId
+  // di objek yang dipakai selanjutnya selalu berupa ID polos yang valid.
+  videoData.forEach((v) => {
+    v.youtubeId = extractYoutubeId(v.youtubeId);
+  });
 
   // Peringatan dini di console kalau ID video masih placeholder,
   // supaya kelihatan sebelum situs di-deploy ke production.
@@ -71,7 +105,6 @@ window.LinkTerpadu = window.LinkTerpadu || {};
 
   document.addEventListener("DOMContentLoaded", () => {
     renderVideoGrid();
-
     if (document.getElementById("videoModalOverlay")) {
       videoModal = App.createModal({
         overlayId: "videoModalOverlay",
