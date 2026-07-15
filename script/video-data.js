@@ -15,7 +15,7 @@ window.LinkTerpadu = window.LinkTerpadu || {};
   const PLACEHOLDER_ID = "dQw4w9WgXcQ";
 
   const videoData = [
-    { id: 1, youtubeId: "dQw4w9WgXcQ", title: "Cara Perawatan dan Pemeliharaan Selang Penyalur", desc: "Panduan langkah demi langkah pemeliharaan selang penyalur pada unit mobil pompa." },
+    { id: 1, youtubeId: "https://youtu.be/vY3DpEboi68?si=ze9LTWONZG0d7JvI", title: "Perawatan Mobil Pompa Pasca Pelaksanaan Penyemprotan Disinfektan", desc: "Panduan langkah demi langkah Perawatan Mobil Pompa Pasca Pelaksanaan Penyemprotan Disinfektan" },
     { id: 2, youtubeId: "dQw4w9WgXcQ", title: "Inspeksi Harian Unit Mobil Pompa Sebelum Operasional", desc: "Checklist inspeksi harian agar unit pompa selalu siap digunakan saat bertugas." },
     { id: 3, youtubeId: "dQw4w9WgXcQ", title: "Teknik Dasar Pengoperasian Unit Mobil Pompa", desc: "Dasar-dasar pengoperasian unit mobil pompa sesuai Buku Diklat Operator." },
     { id: 4, youtubeId: "dQw4w9WgXcQ", title: "Keselamatan Kerja saat Pemeliharaan Perlengkapan", desc: "Prosedur keselamatan kerja (APD) yang wajib diterapkan selama pemeliharaan." },
