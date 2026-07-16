@@ -70,6 +70,45 @@ window.LinkTerpadu = window.LinkTerpadu || {};
   }
 
   let videoModal = null;
+  let ytPlayer = null;
+  let ytApiReady = false;
+  let ytApiLoading = false;
+  const ytApiCallbacks = [];
+
+  /**
+   * Memuat YouTube IFrame Player API sekali saja (lazy-loaded saat
+   * video pertama kali dibuka), supaya kita bisa mendeteksi error
+   * resmi dari YouTube (video tidak ditemukan / embedding dimatikan /
+   * video dihapus atau private) alih-alih membiarkan iframe kosong
+   * tanpa keterangan apa pun ke pengguna.
+   */
+  function loadYoutubeApi(callback) {
+    if (ytApiReady && window.YT && window.YT.Player) {
+      callback();
+      return;
+    }
+    ytApiCallbacks.push(callback);
+    if (ytApiLoading) return;
+    ytApiLoading = true;
+
+    const previousCallback = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () {
+      if (typeof previousCallback === "function") previousCallback();
+      ytApiReady = true;
+      ytApiCallbacks.splice(0).forEach((cb) => cb());
+    };
+
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+  }
+
+  function showVideoError(show) {
+    const player = document.getElementById("youtubePlayer");
+    const fallback = document.getElementById("videoErrorFallback");
+    if (player) player.style.visibility = show ? "hidden" : "visible";
+    if (fallback) fallback.classList.toggle("is-visible", show);
+  }
 
   function renderVideoGrid() {
     const grid = document.getElementById("videoGrid");
@@ -97,10 +136,34 @@ window.LinkTerpadu = window.LinkTerpadu || {};
     if (!videoModal) return;
     document.getElementById("videoModalTitleTxt").textContent = v.title;
     document.getElementById("videoModalDesc").textContent = v.desc;
-    const frame = document.getElementById("youtubeFrame");
-    frame.title = v.title;
-    frame.src = `https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0`;
+
+    const watchLink = document.getElementById("videoWatchLink");
+    if (watchLink) watchLink.href = `https://www.youtube.com/watch?v=${v.youtubeId}`;
+
+    showVideoError(false);
     videoModal.open();
+
+    loadYoutubeApi(() => {
+      // Kalau modal sudah ditutup sebelum API selesai dimuat (koneksi lambat), jangan lanjut.
+      if (!document.getElementById("videoModalOverlay").classList.contains("is-open")) return;
+
+      if (ytPlayer && typeof ytPlayer.loadVideoById === "function") {
+        ytPlayer.loadVideoById(v.youtubeId);
+        return;
+      }
+
+      ytPlayer = new YT.Player("youtubePlayer", {
+        videoId: v.youtubeId,
+        playerVars: { autoplay: 1, rel: 0 },
+        events: {
+          onError: function () {
+            // Kode error YT: 2=ID tidak valid, 5=masalah HTML5 player,
+            // 100=video tidak ditemukan/private/dihapus, 101/150=embedding dimatikan pemilik.
+            showVideoError(true);
+          },
+        },
+      });
+    });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -110,7 +173,10 @@ window.LinkTerpadu = window.LinkTerpadu || {};
         overlayId: "videoModalOverlay",
         closeId: "videoModalClose",
         onClose: () => {
-          document.getElementById("youtubeFrame").src = "";
+          showVideoError(false);
+          if (ytPlayer && typeof ytPlayer.stopVideo === "function") {
+            ytPlayer.stopVideo();
+          }
         },
       });
     }
