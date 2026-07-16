@@ -473,6 +473,36 @@ img { max-width: 100%; display: block; }
 .modal-box__stat-value { font-family:"Barlow Condensed",sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--navy); }
 .modal-box__desc { font-size: 0.9rem; line-height: 1.6; color: var(--ink-soft); }
 
+/* Fallback saat video YouTube gagal diputar (ID salah/dihapus/embedding dimatikan) */
+.video-error-fallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 24px;
+  background: var(--navy);
+  color: #fff;
+}
+.video-error-fallback.is-visible { display: flex; }
+.video-error-fallback__icon { font-size: 2rem; }
+.video-error-fallback__text { font-size: 0.85rem; line-height: 1.5; color: #d7dce6; max-width: 380px; }
+.video-error-fallback__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  border-radius: var(--radius-s);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.video-error-fallback__link:hover { background: var(--red-dark); }
+
 /* ==========================================================================
    PEMELIHARAAN (Menu 2)
    ========================================================================== */
