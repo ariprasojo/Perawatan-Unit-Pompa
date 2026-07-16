@@ -57,7 +57,12 @@
 <div class="modal-overlay" id="videoModalOverlay" role="dialog" aria-modal="true" aria-labelledby="videoModalTitleTxt" aria-hidden="true" tabindex="-1">
   <div class="modal-box" style="max-width:720px;">
     <div class="modal-box__hero" style="height:0;padding-bottom:56.25%;position:relative;background:#000;">
-      <iframe id="youtubeFrame" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay; encrypted-media" allowfullscreen title="Video Edukasi"></iframe>
+      <div id="youtubePlayer" style="position:absolute;inset:0;width:100%;height:100%;"></div>
+      <div id="videoErrorFallback" class="video-error-fallback" style="position:absolute;inset:0;">
+        <div class="video-error-fallback__icon">⚠️</div>
+        <p class="video-error-fallback__text">Video ini tidak dapat diputar langsung di sini (kemungkinan ID video salah, video sudah dihapus/private, atau pemilik menonaktifkan opsi embed). Silakan tonton langsung di YouTube.</p>
+        <a id="videoWatchLink" class="video-error-fallback__link" href="#" target="_blank" rel="noopener noreferrer">▶ Tonton di YouTube</a>
+      </div>
       <button class="modal-box__close" id="videoModalClose" aria-label="Tutup video" style="z-index:2;">✕</button>
     </div>
     <div class="modal-box__body">
